@@ -33,7 +33,7 @@ function generatePassword() {
     alert("Wrong!");    
     // AND EXIT FUNCTION (throw a return; at the end of the function to EXIT the function, and stop ANY code below from running)      
     return;
-}
+    }
 
 
 
