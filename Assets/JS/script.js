@@ -18,12 +18,13 @@ function generatePassword() {
             alert("Please select the proper length.");
             return;
         }  else {
-            
+
         } 
 
     var isUsingNumbers = confirm("Do you want to include Numbers?");
         if (isUsingNumbers === true) {
             charactersToUse.push(...numbers);
+            //AND APPEND on random number from the 'numbers' list
         };
 
     var isUsingLowerCaseLetters = confirm("Do you want to include lowercase letters?");
@@ -47,13 +48,21 @@ function generatePassword() {
             Math.floor(Math.random() * length)
         }
 
-
+ // if no character type is chosen
+ //if (!isUsingNumbers && !isUsingLowerCaseLetters && !isUsingUpperCaseLetters && !isUsingSpecialCharacters) {
+ //        THEN ALERT user to pick at least one
+ //        alert("You must pick at least one of the criteria.")
+ //        return; 
+// }
 
 var password = "";
  
 while ( password.Length < passwordLength ) {
     //SELECT 'randomCharacter' a characcter from 'charactersToUse'
+    let randomCharacter = charactersToUse[Math.floor(Math.random() * charactersToUse.length)];
     //APPEND 'randomCharacter' to 'password' string.
+    // password = password + randomCharacter
+    password += randomCharacter
 }
 
 //return password;
