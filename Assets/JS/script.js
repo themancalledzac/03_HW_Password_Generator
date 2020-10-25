@@ -8,10 +8,10 @@ function generatePassword() {
     uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     specialLetters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ",", "<", ">", ":", ";", "[", "]", "{", "}"]
     var charactersToUse = []; 
+    var password = "";
 
-
-    var passwordLength = parseInt(prompt("GoGood day. Please select a length for your password, in numerical value, between 8 and 128."));
-        if ( !(passwordLength > 7 || passwordLength < 129 || passwordLength === NaN)) {
+    var passwordLength = parseInt(prompt("Good day. Please select a length for your password, in numerical value, between 8 and 128."));
+        if ( !(passwordLength > 7 || passwordLength < 129 && passwordLength === NaN)) {
             alert("Please select the proper length.");
             return;
         }   
@@ -45,31 +45,25 @@ function generatePassword() {
             Math.floor(Math.random() * length)
         }
 
- // if no character type is chosen
- //if (!isUsingNumbers && !isUsingLowerCaseLetters && !isUsingUpperCaseLetters && !isUsingSpecialCharacters) {
- //        THEN ALERT user to pick at least one
- //        alert("You must pick at least one of the criteria.")
- //        return; 
-// }
+    // if no character type is chosen
+    //if (!isUsingNumbers && !isUsingLowerCaseLetters && !isUsingUpperCaseLetters && !isUsingSpecialCharacters) {
+    //        THEN ALERT user to pick at least one
+    //        alert("You must pick at least one of the criteria.")
+    //        return; 
+    // }
 
-var password = "";
+    while ( password.length < passwordLength ) {
+        //SELECT 'randomCharacter' a characcter from 'charactersToUse'
+        let randomCharacter = charactersToUse[Math.floor(Math.random() * charactersToUse.length)];
+        //APPEND 'randomCharacter' to 'password' string.
+        // password = password + randomCharacter
+        password += randomCharacter
 
-while ( password.length < passwordLength ) {
-    //SELECT 'randomCharacter' a characcter from 'charactersToUse'
-    let randomCharacter = charactersToUse[Math.floor(Math.random() * charactersToUse.length)];
-    //APPEND 'randomCharacter' to 'password' string.
-    // password = password + randomCharacter
-    password += randomCharacter
+    }
 
-}
-
-//return password;
-
-
-return password;
+    return password;
 
 }
-
 
 console.log(password);
 var generateBtn = document.querySelector("#generate");
