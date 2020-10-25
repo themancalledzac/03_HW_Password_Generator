@@ -10,21 +10,18 @@ function generatePassword() {
     var charactersToUse = []; 
 
 
-
-
-
-    var passwordLength = prompt("GoGood day. Please select a length for your password, in numerical value, between 8 and 128.");
+    var passwordLength = parseInt(prompt("GoGood day. Please select a length for your password, in numerical value, between 8 and 128."));
         if ( !(passwordLength > 7 || passwordLength < 129 || passwordLength === NaN)) {
             alert("Please select the proper length.");
             return;
-        }  else {
-
-        } 
+        }   
 
     var isUsingNumbers = confirm("Do you want to include Numbers?");
         if (isUsingNumbers === true) {
             charactersToUse.push(...numbers);
             //AND APPEND on random number from the 'numbers' list
+            // do this instead of pushing the whole thing? OR
+            // APPEND random number to var password ALONG with all numbers to the charactersToUse
         };
 
     var isUsingLowerCaseLetters = confirm("Do you want to include lowercase letters?");
@@ -56,20 +53,25 @@ function generatePassword() {
 // }
 
 var password = "";
- 
-while ( password.Length < passwordLength ) {
+
+while ( password.length < passwordLength ) {
     //SELECT 'randomCharacter' a characcter from 'charactersToUse'
     let randomCharacter = charactersToUse[Math.floor(Math.random() * charactersToUse.length)];
     //APPEND 'randomCharacter' to 'password' string.
     // password = password + randomCharacter
     password += randomCharacter
+
 }
 
 //return password;
 
+
 return password;
+
 }
 
+
+console.log(password);
 var generateBtn = document.querySelector("#generate");
 
                     // Add event listener to generate button
@@ -81,3 +83,4 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
 }
+
