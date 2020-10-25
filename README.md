@@ -32,6 +32,8 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
+[Live Site](https://themancalledzac.github.io/03_HW_Password_Generator/)
+
 ![password generator demo](./Assets/images/03-javascript-homework-demo.png)
 
 # Code

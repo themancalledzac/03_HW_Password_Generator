@@ -11,7 +11,7 @@ function generatePassword() {
     var password = "";
 
     var passwordLength = parseInt(prompt("Good day. Please select a length for your password, in numerical value, between 8 and 128."));
-        if ( !(passwordLength > 7 || passwordLength < 129 && passwordLength === NaN)) {
+        if ( !(passwordLength > 7 || passwordLength <= 129 && passwordLength === NaN)) {
             alert("Please select the proper length.");
             return;
         }   
