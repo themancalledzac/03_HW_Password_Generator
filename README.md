@@ -32,6 +32,8 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
+![password generator demo](./Assets/images/03-javascript-homework-demo.png)
+
 # Code
 
 ![Javascript](./Assets/images/03_HW_01.png)
